@@ -114,18 +114,6 @@ header {
   background-color: #4a64df; /* Darker color on hover */
 }
 
-/* Adjustments for mobile views or smaller screens */
-@media screen and (max-width: 768px) {
-  .nav-items {
-    flex-direction: column; /* Stack the boxes on smaller screens */
-  }
-
-  .nav-items li,
-  .quote-box {
-    flex-basis: 100%; /* Full width for each item on smaller screens */
-    margin: 5px 0; /* Spacing between stacked boxes */
-  }
-}
 
 .header-content {
   display: flex;
@@ -143,32 +131,67 @@ header {
   margin-left: -50px;
 }
 
-@media screen and (max-width: 768px) {
-  .header-content {
-    justify-content: center;
-  }
-  
-  .subtitle h2 {
-    padding: 10px 20px;
-    text-align: center;
+@media (max-width: 768px) {
+  header {
+      height: 280px; /* Retain the same height as on desktop */
+      position: relative; /* Maintain relative positioning */
+      background-color: #0f102c; /* Ensure the background color remains */
+      padding-top: 20px; /* Keep padding consistent */
   }
 
-  .quote-box {
-    order: 3; /* Ensures the quote box is at the end on mobile */
-    width: 100%; /* Full width for smaller screens */
-    margin: 10px 0; /* Adds margin at the top and bottom */
-  }
-  
-  .nav-items,
-  .contact-info {
-    order: 2;
-    width: 100%; /* Full width for smaller screens */
-  }
-  
   .logo {
-    order: 1;
+      position: absolute; /* Keep the logo absolutely positioned */
+      top: 0;
+      left: 0;
+      width: 230px; /* Maintain logo size */
+      height: 200px; /* Maintain logo size */
+      margin-top: 40px;
+      margin-left: 10px;
+  }
+
+  .contact-info {
+      background-color: #404041; /* Ensure the background color remains */
+      color: white; /* Keep text color */
+      text-align: right; /* Align text to the right */
+      padding: 5px 10px; /* Maintain padding */
+      font-size: 1.2em; /* Keep font size */
+      margin-top: -19px; /* Adjust margin to fit */
+  }
+
+  .navigation {
+      display: flex; /* Keep the flex display */
+      justify-content: center; /* Center navigation */
+      align-items: center; /* Align items for consistent layout */
+      margin-top: 50px; /* Maintain margin from top */
+      margin-left: 250px; /* Adjust margin to keep it centered */
+  }
+
+  .nav-items {
+      list-style-type: none; /* No bullet points */
+      padding: 0; /* No padding */
+      margin: 0; /* No margin */
+      display: flex; /* Maintain flex display */
+      flex-wrap: wrap; /* Allow items to wrap */
+      justify-content: center; /* Center items */
+      align-content: center; /* Align items vertically */
+      gap: 20px; /* Maintain gaps between items */
+  }
+
+  .nav-items li {
+      flex: 0 0 calc(50% - 10px); /* Adjust sizing to be responsive */
+  }
+
+  .nav-items a {
+      display: block; /* Ensure links fill the list item */
+      padding: 16px 10px; /* Maintain padding */
+      text-decoration: none;
+      color: white; /* Text color */
+      font-weight: bold; /* Bold font */
+      text-align: center; /* Center text */
+      font-size: 1.3rem; /* Font size */
   }
 }
+
 
 .header-right {
   display: flex;
