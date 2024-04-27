@@ -1,51 +1,189 @@
 <!DOCTYPE html>
-<html lang="en-ca">
-
+<html lang="en">
 <head>
-  <!-- Set the page title -->
-  <title>Assignment 04 - Finishing a Todo List App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProShine</title>
 
-  <!-- Set the charset we're using to UTF-8 -->
-  <meta charset="utf-8" />
+<link rel="stylesheet" href="./reset.css" />
 
-  <!-- Set the screens default zoom / scale to 1 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Specifies the document mode for Internet Explorer -->
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-  <!-- Set the CSS Reset File -->
-  <link rel="stylesheet" href="./reset.css" />
-
-  <!-- Set the main stylesheet -->
-  <link rel="stylesheet" href="./style.css" />
-
-  <!-- Set the Favicon  -->
-  <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
+<!-- Set the CSS Stylesheet File for Step 1 -->
+<link rel="stylesheet" href="./style.css" />
 </head>
+
+
+
 <body>
 
-  <!--
+<header id="top">
 
-    Assignment 04 - Finishing a Todo List App
+    <div class="contact-info">
+        <span>📧 Service@proshinecanada.co</span>
+        <span>📞 +1 (613) 710-1707</span>
+    </div>
+    
+<div class="logo"> 
+<img src="proshine logo.png" alt="ProShineCanadaLogo">
+</div>
 
-    Instructions:
+<nav class="navigation">
+    <ul class="nav-items">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-    Important checklist:
+    <!-- Separate list item for the Get a quote box -->
+    <div class="header-right">
+        <div class="subtitle">
+          <h2>
+            Bringing Shine to Your Space! 
+            Quality Cleaning and Maintenance Services
+        </h2>
+        </div>
+        <div class="quote-box">
+          <a href="#contact">Get a Quote!</a>
+        </div>
+      </div>
 
-    - Are users able to create and delete to do list items?
-    - Have you set a favicon? (included - but it's a rocket)
-    - Has a team member conducted a code review and left a GitHub Issue in your repo?
-    - Have you conducted a code review and left a GitHub Issue on your team member's repo?
+</header>
 
-  -->
+<main>
 
-  <main>
-    <div id="app"></div>
-  </main>
+    <div class="Services" id="services">
+        <h2>Our Services</h2>
+    </div>
+    <div class="services-container">
+    <div class="service-box">
+        <a href="quote.html" class="service-link">
+         <!-- image -->
+        <div class="service-image">
+          <img src="window_cleaning.png" alt="Window Cleaning" />
+        </div>
+        <!-- content -->
+        <div class="service-content">
+          <h3>Windows Cleaning</h3>
+          <p>Exterior/interior window cleaning for crystal clear views</p>
+        </div>
+        </a>
 
-  <!-- Add JavaScript File -->
-  <script src="./script.js"></script>
+    </div>
 
+    <div class="service-box">
+        <a href="quote.html" class="service-link">
+        <div class="service-image">
+          <img src="pressure_washing.png" alt="Pressure washing" />
+        </div>
+        <div class="service-content">
+          <h3>Pressure washing</h3>
+          <p>Pressure washing driveway/ walkways</p>
+        </div>
+        </a>
+      </div>
+
+      <div class="service-box">
+        <a href="quote.html" class="service-link">
+        <!-- image -->
+       <div class="service-image">
+         <img src="gutters_cleaning.png" alt="Gutters and eavestrough cleaning" />
+       </div>
+       <!-- content -->
+       <div class="service-content">
+         <h3>Gutters and eavestrough cleaning</h3>
+         <p>Gutters and eavestrough cleaning for easy waterflow/cleaner space</p>
+       </div>
+         </a>
+   </div>
+
+   <div class="service-box">
+    <a href="quote.html" class="service-link">
+    <div class="service-image">
+      <img src="grass_cutting.png" alt="grass" />
+    </div>
+    <div class="service-content">
+      <h3>Grass cutting / Gardening</h3>
+      <p>Taking care of your garden. Cutting the grass/weed removal for a refreshing garden look</p>
+    </div>
+    </a>
+  </div>
+    </div>
+
+    <div class="booking box" id="contact">
+        <div class="h2p">
+        <h2>Book your service now!</h2>
+        <p>Get a quote for your service now and we will get back to you as soon as possible</p>
+    </div>
+        <div class="quote-email-box">
+            <h2>Get A quote Through Email</h2>
+            <h4>You can get a free quote by sending us an email with the following information:</h4>
+            <ul>
+                <li>Your Name</li>
+                <li>Your Address</li>
+                <li>Your Phone Number</li>
+                <li>Service you are interested in (include all services needed, any specifications).</li>
+                <li>Include an approximate size for windows, driveways, gardens, etc.</li>
+                <li>Times you want the service done. Include more than one.</li>
+                <li>Any additional information we may need to know.</li>
+            </ul>
+            <p>Send the email to: Service@proshinecanada.co</p>
+            <p>you can also call us at +1 (613) 710-1707 if you have any questions</p>
+        </div>
+
+        <div class="about" id="about">
+            <h2>About Us</h2>
+            <p>
+                ProShine Canada is a cleaning and maintenance company that provides quality services 
+                to our clients. We are dedicated to providing the best service to our clients and 
+                ensuring that they are satisfied with our work. We offer a variety of services 
+                including window cleaning, pressure washing, gutters and eavestrough cleaning, 
+                and grass cutting/gardening. Our team is professional and experienced, and we take 
+                pride in our work. We are committed to providing excellent service and ensuring 
+                that our clients are happy with the results. Contact us today to book your service 
+                and experience the ProShine difference!
+            </p>
+            <div class="team-section">
+            <h3>Our Team</h3>
+            <p>
+                Our team is made up of experienced professionals who are dedicated to providing 
+                the best service to our clients. We are committed to ensuring that our clients are 
+                satisfied with our work and that their needs are met. Our team is professional, 
+                reliable, and efficient, and we take pride in our work. We are committed to providing 
+                excellent service and ensuring that our clients are happy with the results. Contact 
+                us today to book your service and experience the ProShine difference!
+            </p>
+        </div>
+        </div>
+
+</main>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="proshine logo.png" alt="ProShineCanadaLogo">
+        </div>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Privacy.Policy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <span>📧 Service@proshinecanada.co</span>
+            <span>📞 +1 (613) 710-1707</span>
+            <span> ©2024 </span>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Add your JavaScript here
+</script>
 </body>
 </html>
+
+

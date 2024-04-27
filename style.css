@@ -1,56 +1,490 @@
-/*
- * CSS File for the solution
- * Assignment 03
- * You can modify these styles but you don't have to
- */
-
-/*
- VARIABLES
-*/
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
-
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
-}
-
-/*
-  PAGE / BODY
-*/
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
 }
 
-main {
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Style for the header to ensure full width and positioning */
+header {
+  width: 100%;
+  height: 280px; /* Adjust based on your logo's height, set smaller than before if necessary */
+  position: relative; /* Required for absolute positioning of child elements */
+  background-color: #0f102c; /* Optional: background color for the header */
+  padding-top: 20px;
 }
 
+/* Style to position and size the logo in the top left corner */
+.logo {
+  position: absolute; /* Absolute position within the header */
+  top: 0;
+  left: 0;
+  width: 230px; /* Set the width of the logo */
+  height: 200px; /* Set the height of the logo */
+  margin-top: 40px;
+  margin-left: 10px;
+}
 
-/****** Screen reader text utility clsas *******/
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+.logo img {
+  width: 100%; /* Ensures the image fills the .logo div completely */
+  height: auto; /* Maintains the aspect ratio of the image */
+}
+
+/* Style for the contact information bar */
+.contact-info {
+  background-color: #404041; /* Change the color to match your design */
+  color: white; /* Adjust text color as needed */
+  text-align: right; /* Align text to the right */
+  padding: 5px 10px; /* Add some padding */
+  font-size: 1.2em; /* Smaller font size for the contact info */
+  margin-top: -19px;
+}
+
+/* Style for the contact information items */
+.contact-info span {
+  margin-right: 60px; /* Adds space to the right of each span, adjust as needed */
+}
+
+/* Optional: If you want the last item not to have the extra margin, you can use :last-child selector */
+.contact-info span:last-child {
+  margin-right: 15px; /* Removes the margin from the last span element */
+}
+
+/* Navigation Styles */
+.navigation {
+  display: flex; /* Use flex to align items */
+  justify-content: center; /* Center items in the header */
+  align-items: center; /* Align items vertically */
+  margin-top: 50px; /* Adjust the margin to position the navigation */
+  margin-left: 250px;
+}
+
+.nav-items {
+  list-style-type: none;
   padding: 0;
-  margin: -1px;
+  margin: 0;
+  display: flex; /* Use flex to keep items in a row */
+  flex-wrap: wrap; /* Allow wrapping for 2x2 grid */
+  justify-content: center; /* Center the items */
+  align-content: center; /* Center wrapped items vertically */
+  gap: 20px; /* Adjust spacing between the boxes */
+}
+
+.nav-items li {
+  background-color: #4faeff; /* Light grey background, change as needed */
+  border-radius: 5px; /* Rounded corners for boxes */
+  flex: 0 0 calc(50% - 10px); /* Adjust size to fit two boxes per row accounting for gap */
+}
+
+.nav-items a {
+  display: block; /* Make the link fill the entire list item */
+  padding: 16px 10px; /* Padding inside the boxes */
+  text-decoration: none;
+  color: white; /* Text color for links, change as needed */
+  font-weight: bold; /* Makes the text bold */
+  transition: background-color 0.3s; /* Smooth background color transition on hover */
+  justify-content: center; /* Center the items */
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.nav-items a:hover {
+  background-color: #4a64df; /* Color on hover, change as needed */
+}
+
+/* Specific style for the 'Get a Quote!' box */
+.quote-box {
+  padding: 0;
+  margin: 5px; /* Ensure some space around the quote box */
+  margin-left: 0px;
+  margin-bottom: 100px; 
+}
+
+.quote-box a {
+  background-color: #4faeff; /* Bright color for the quote box */
+  color: #fff;
+  padding: 16px 24px; /* Padding inside the box */
+  border-radius: 5px; /* Rounded corners for the box */
+  text-decoration: none;
+  font-weight: bold; /* Optional: makes the text bold */
+  transition: background-color 0.3s; /* Smooth background color transition on hover */
+  font-size: 1.3rem;
+}
+
+.quote-box a:hover {
+  background-color: #4a64df; /* Darker color on hover */
+}
+
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows content to wrap when there's not enough space */
+}
+
+.subtitle h2 {
+  color: #FFFFFF;
+  font-size: 2rem; /* Choose an appropriate font-size */
+  font-weight: 400; /* Lighter font-weight can look modern and clean */
+  margin: 0 auto; /* Centers the subtitle */
+  padding: 10px; /* Provides padding around the text */
+  margin-left: -50px;
+}
+
+@media screen and (max-width: 768px) {
+  /* Overriding header, navigation, and subtitle styles for mobile devices */
+
+  header {
+    height: auto; /* Allows the header to expand to fit content */
+    padding-bottom: 20px; /* Adds some space at the bottom of the header */
+  }
+
+  .logo {
+    position: relative; /* Resets to default positioning */
+    width: 100%; /* Full width of the header */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 0;
+    margin-left: 0;
+    display: flex; /* Use flex to center the logo image */
+    justify-content: center; /* Centers the logo horizontally */
+  }
+
+  .logo img {
+    max-width: 230px; /* Limits the logo size and maintains aspect ratio */
+    height: auto;
+  }
+
+  .contact-info {
+    display: flex; /* Use flex layout for contact information */
+    justify-content: space-between; /* Distributes space evenly around items */
+    padding: 0 10px; /* Adds padding on the sides */
+    font-size: 1em; /* Adjusts font size for mobile */
+    margin-top: 0;
+  }
+
+  /* Reset navigation menu to a single row layout */
+  .navigation {
+    display: block; /* Changes flex container to block container */
+    text-align: center; /* Center align the navigation items */
+    margin-top: 20px; /* Adds some space between the logo and navigation */
+    margin-left: 0;
+  }
+
+  .nav-items {
+    display: inline-block; /* Aligns the navigation items in a row */
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+
+  .nav-items li {
+    display: inline-block; /* List items displayed in-line */
+    background-color: transparent; /* Removes background color */
+  }
+
+  .nav-items a {
+    padding: 8px 12px; /* Reduces padding for space constraints */
+    font-size: 1rem; /* Reduces font size to prevent wrapping */
+  }
+
+  /* Adjust subtitle and 'Get a Quote' box for mobile layout */
+  .header-right {
+    position: relative; /* Resets to default positioning */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Aligns content to the start */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Adds margin to the top and bottom */
+  }
+
+  .subtitle h2 {
+    font-size: 1.4rem; /* Adjusts font size for mobile */
+    line-height: 1.2; /* Adjusts line height for better readability */
+    padding: 0; /* Resets padding */
+    margin: 0; /* Resets margin */
+  }
+
+  .quote-box {
+    width: 100%; /* Full width of the header */
+    margin: 10px 0; /* Adds margin above and below */
+  }
+
+  .quote-box a {
+    display: block; /* Block display to fill the width */
+    margin: 0 auto; /* Centers the 'Get a Quote' button */
+    padding: 10px 0; /* Adds padding inside the button */
+  }
+}
+
+
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align to the right */
+}
+
+.subtitle {
+  margin-right: 20px; /* Adjust the spacing between the subtitle and the quote box */
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 300;
+  /* You may not need text-align: center; anymore, so you can remove it if you like */
+  max-width: 60%; /* Or adjust as needed */
+  margin-left: -200px;
+}
+
+.Services h2 {
+  text-align: center; /* Center the text */
+  font-size: 2.2rem; /* Adjust size as needed */
+  margin: 20px 0; /* Add some space above and below the header */
+  animation: fadeInUp 1s ease-out; /* Apply the animation */
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px); /* Start position off-screen */
+    opacity: 0; /* Start fully transparent */
+  }
+  to {
+    transform: translateY(0); /* End at natural position */
+    opacity: 1; /* End fully opaque */
+  }
+}
+
+.service-box {
+  width: 300px; /* Adjust the width as needed */
+  margin: 20px; /* Adds some space around the box, adjust as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #FFFFFF;
+  border-radius: 8px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  flex: 0 0 23%; /* Sets the boxes to take up 23% of the container width */
+  height: auto; /* Height is automatic to fit the content */
+  margin-left: 20px;
+}
+
+.service-image {
+  width: 100%; /* Image container spans the full width */
+  height: 50%; /* Adjust height to the desired ratio */
+  overflow: hidden;
+}
+
+.service-image img {
+  max-width: 100%; /* Ensures the image scales down if necessary */
+  max-height: 100%; /* Limits the height of the image */
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 15px;
+  text-align: center;
+  flex-grow: 1; /* Ensures the content can grow to fill the space */
+}
+
+.service-content h3 {
+  font-size: 1.7rem;
+  margin-top: 20px;
+}
+
+.service-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center; /* Spaces out the boxes evenly */
+  align-items: flex-start; /* Aligns boxes to the top */
+  flex-wrap: nowrap; /* Prevents wrapping, forcing all boxes into one row */
+  max-width: 100%; /* Ensures the container spans the full width of its parent */
+  margin: auto;
+  gap: 0px; /* This is optional if you want space between the boxes */
+  padding: 20px 0; /* Vertical padding only */
+  overflow-x: auto; /* Allows horizontal scrolling if boxes overflow the screen width */
+  margin-left: 20px;
+}
+
+.service-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* A more prominent shadow on hover */
+  transform: scale(1.03); /* Slightly scale up the box */
+  background-color: #4a64df;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .service-box {
+    flex: 0 0 90%; /* Each service box takes up 90% of the container's width */
+    margin: 10px auto; /* Centers the boxes in the container */
+  }
+
+  /* Adjust the header-right styles for mobile */
+  .header-right {
+    flex-direction: column;
+    align-items: center;
+  }
+  .subtitle h2 {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    text-align: center; /* Center-align the subtitle */
+    margin: 0; /* Remove any negative margins */
+  }
+  
+}
+
+.service-link {
+  text-decoration: none; /* Removes the underline from links */
+  color: inherit; /* Inherits the text color from the parent */
+  display: block; /* Ensures the link fills the entire service box */
+  height: 100%;
+}
+
+.booking-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the content horizontally in a flex container */
+  justify-content: center; /* This centers the content vertically in a flex container */
+  text-align: center; /* This centers the text inside each block */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.booking-box h2 {
+  color: #333; /* Dark color for headings */
+  margin-bottom: 20px; /* Space after the heading */
+}
+
+.booking-box p {
+  color: #666; /* Lighter color for paragraphs */
+  line-height: 1.6; /* Space between lines of text */
+  margin-bottom: 15px; /* Space after each paragraph */
+}
+
+.quote-email-box {
+  background-color: #0f102c; /* A white background color to distinguish this area */
+  padding: 20px; /* Spacing inside the nested box */
+  border: 1px solid #ddd; /* Border to define the nested box */
+  border-radius: 4px; /* Slightly rounded corners for the nested box */
+  margin-top: 30px; /* Space above the nested box */
+  color: white;
+}
+
+.quote-email-box ul {
+  list-style-type: none; /* Remove the default list styling */
+  padding: 0; /* Remove the default padding */
+  margin: 20px 0; /* Vertical margin for space around the list */
+}
+
+.quote-email-box ul li {
+  margin-bottom: 10px; /* Space between list items */
+  color: white; 
+}
+
+.quote-email-box ul li:before {
+  content: "•"; /* Custom bullet point */
+  color: #333; /* Color of the bullet point */
+  font-weight: bold; /* Make the bullet point bold */
+  display: inline-block; /* Needed for custom bullet points */
+  width: 1em; /* Space before the bullet point */
+  margin-left: 0px; /* Adjust horizontal position of the bullet point */
+}
+
+.quote-email-box p:last-of-type {
+  margin-top: 30px; /* Space before the final paragraph */
+}
+
+.booking-box p, .h2p, .quote-email-box p{
+  /* Applying text centering to all text within the booking box */
+  text-align: center;
+}
+
+/* Additional styles for responsive behavior */
+@media (max-width: 768px) {
+  .booking-box {
+    margin: 20px; /* Smaller margin on smaller screens */
+    padding: 20px; /* Smaller padding on smaller screens */
+  }
+}
+
+.about {
+  background-color: white; /* A white background color to distinguish this area */
+  padding: 20px; /* Spacing inside the nested box */
+  border: 1px solid #ddd; /* Border to define the nested box */
+  border-radius: 4px; /* Slightly rounded corners for the nested box */
+  margin-top: 30px; /* Space above the nested box */
+  color: black;
+}
+
+.about, .h2p {
+  /* Applying text centering to all text within the booking box */
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  background-color: #0f102c;
+  color: white;
+  padding: 20px 0;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.footer-logo img {
+  width: 100px; /* Adjust the size of the logo as per your requirement */
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #4a64df;
+}
+
+.footer-contact span {
+  display: block; /* Stacks the contact info vertically */
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-nav ul {
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  .footer-contact {
+      margin-top: 10px;
+  }
 }
